@@ -6,13 +6,15 @@ import { ChatPanel } from './components/ChatPanel';
 import { Timeline } from './components/Timeline';
 import { DeviceGrid } from './components/DeviceGrid';
 import { Reports } from './pages/Reports';
+import { Automations } from './pages/Automations';
 
-type Tab = 'home' | 'devices' | 'timeline' | 'reports';
+type Tab = 'home' | 'devices' | 'timeline' | 'automations' | 'reports';
 
 const tabs: { id: Tab; label: string }[] = [
   { id: 'home', label: '🏠 Home' },
   { id: 'devices', label: '📱 Devices' },
   { id: 'timeline', label: '📋 Timeline' },
+  { id: 'automations', label: '⚡ Automations' },
   { id: 'reports', label: '📊 Reports' },
 ];
 
@@ -54,7 +56,6 @@ function App() {
       if (resp.plan?.actions?.length > 0 && !resp.needs_confirmation) {
         setChatHistory(prev => [...prev, { role: 'assistant', text: '⏳ Executing...' }]);
         const execResp = await api.chat(message, false, true);
-        // Replace the executing message with the result
         setChatHistory(prev => {
           const updated = [...prev];
           updated[updated.length - 1] = { role: 'assistant', text: execResp.reply };
@@ -120,6 +121,8 @@ function App() {
         {activeTab === 'devices' && <DeviceGrid />}
 
         {activeTab === 'timeline' && <Timeline entries={timeline} full />}
+
+        {activeTab === 'automations' && <Automations />}
 
         {activeTab === 'reports' && <Reports />}
       </main>
