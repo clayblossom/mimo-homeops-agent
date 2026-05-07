@@ -1,6 +1,7 @@
 """MiMo HomeOps Agent Pro — Main FastAPI application."""
 from __future__ import annotations
 
+import asyncio
 import time
 from contextlib import asynccontextmanager
 
@@ -201,8 +202,27 @@ async def device_action(device_id: str, action: str, parameters: dict | None = N
         raise HTTPException(404, str(e))
 
 
+# ── Reports ────────────────────────────────────────────────────────────────
+
+@app.get("/api/reports/daily")
+async def daily_report(date: str | None = None):
+    """Generate a daily energy & comfort report."""
+    from .reports import generate_daily_report, save_report
+    report = generate_daily_report(date)
+    md_path = save_report(report)
+    return {**report, "markdown_path": str(md_path)}
+
+
 # ── Entry point ─────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
+    import sys
     import uvicorn
-    uvicorn.run("app.main:app", host=API_HOST, port=API_PORT, reload=DEBUG)
+
+    if "--telegram" in sys.argv:
+        # Run Telegram bot
+        from .telegram_bot import TelegramBot
+        bot = TelegramBot()
+        asyncio.run(bot.run_polling())
+    else:
+        uvicorn.run("app.main:app", host=API_HOST, port=API_PORT, reload=DEBUG)

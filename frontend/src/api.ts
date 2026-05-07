@@ -78,4 +78,6 @@ export const api = {
       method: 'POST',
       body: JSON.stringify(params || {}),
     }),
+  dailyReport: (date?: string) =>
+    fetchJson<any>(`/reports/daily${date ? `?date=${date}` : ''}`),
 };
