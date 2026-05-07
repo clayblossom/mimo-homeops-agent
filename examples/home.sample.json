@@ -1,0 +1,144 @@
+{
+  "home_name": "MiMo Demo Home",
+  "rooms": [
+    {
+      "name": "Living Room",
+      "devices": [
+        {
+          "id": "lr_light_1",
+          "name": "Main Light",
+          "type": "light",
+          "attributes": {"on": true, "brightness": 80, "color_temp": 4000}
+        },
+        {
+          "id": "lr_ac_1",
+          "name": "AC Living Room",
+          "type": "ac",
+          "attributes": {"on": false, "temperature": 26, "mode": "auto", "fan_speed": "auto"}
+        },
+        {
+          "id": "lr_sensor_temp",
+          "name": "Temperature Sensor",
+          "type": "sensor",
+          "attributes": {"value": 29.5, "unit": "°C"}
+        },
+        {
+          "id": "lr_sensor_humidity",
+          "name": "Humidity Sensor",
+          "type": "sensor",
+          "attributes": {"value": 65, "unit": "%"}
+        },
+        {
+          "id": "lr_sensor_motion",
+          "name": "Motion Sensor",
+          "type": "sensor",
+          "attributes": {"motion": false}
+        }
+      ]
+    },
+    {
+      "name": "Bedroom",
+      "devices": [
+        {
+          "id": "br_light_1",
+          "name": "Bedroom Light",
+          "type": "light",
+          "attributes": {"on": false, "brightness": 50, "color_temp": 3000}
+        },
+        {
+          "id": "br_ac_1",
+          "name": "AC Bedroom",
+          "type": "ac",
+          "attributes": {"on": false, "temperature": 25, "mode": "cool", "fan_speed": "low"}
+        },
+        {
+          "id": "br_curtain_1",
+          "name": "Bedroom Curtain",
+          "type": "curtain",
+          "attributes": {"position": 100, "state": "open"}
+        },
+        {
+          "id": "br_sensor_temp",
+          "name": "Temperature Sensor",
+          "type": "sensor",
+          "attributes": {"value": 28.0, "unit": "°C"}
+        },
+        {
+          "id": "br_sensor_motion",
+          "name": "Motion Sensor",
+          "type": "sensor",
+          "attributes": {"motion": true}
+        }
+      ]
+    },
+    {
+      "name": "Kitchen",
+      "devices": [
+        {
+          "id": "kt_light_1",
+          "name": "Kitchen Light",
+          "type": "light",
+          "attributes": {"on": true, "brightness": 100, "color_temp": 5000}
+        },
+        {
+          "id": "kt_plug_1",
+          "name": "Coffee Machine Plug",
+          "type": "plug",
+          "attributes": {"on": false, "power_w": 0}
+        },
+        {
+          "id": "kt_sensor_leak",
+          "name": "Leak Sensor",
+          "type": "sensor",
+          "attributes": {"leak": false}
+        }
+      ]
+    },
+    {
+      "name": "Study Room",
+      "devices": [
+        {
+          "id": "sr_light_1",
+          "name": "Desk Light",
+          "type": "light",
+          "attributes": {"on": true, "brightness": 90, "color_temp": 4500}
+        },
+        {
+          "id": "sr_fan_1",
+          "name": "Ceiling Fan",
+          "type": "fan",
+          "attributes": {"on": true, "speed": 3, "max_speed": 5}
+        },
+        {
+          "id": "sr_plug_1",
+          "name": "Monitor Plug",
+          "type": "plug",
+          "attributes": {"on": true, "power_w": 45}
+        }
+      ]
+    },
+    {
+      "name": "Hallway",
+      "devices": [
+        {
+          "id": "hw_light_1",
+          "name": "Hallway Light",
+          "type": "light",
+          "attributes": {"on": false, "brightness": 60, "color_temp": 3500}
+        },
+        {
+          "id": "hw_purifier_1",
+          "name": "Air Purifier",
+          "type": "purifier",
+          "attributes": {"on": false, "mode": "auto", "pm25": 35, "filter_life": 72}
+        },
+        {
+          "id": "hw_sensor_door",
+          "name": "Front Door Sensor",
+          "type": "sensor",
+          "attributes": {"open": false}
+        }
+      ]
+    }
+  ]
+}
