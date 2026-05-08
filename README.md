@@ -43,6 +43,7 @@ npm run dev
 ```
 
 Open http://localhost:5173
+<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/8c1baf9b-1f95-48c4-a1fc-ea5850448d5b" />
 
 ## Environment Variables
 
