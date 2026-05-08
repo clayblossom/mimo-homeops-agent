@@ -1,3 +1,4 @@
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/4059a283-9495-49ec-b516-c2d43a6ac1ec" />
 # MiMo HomeOps Agent Pro
 
 AI automation copilot for Xiaomi-style smart homes.
